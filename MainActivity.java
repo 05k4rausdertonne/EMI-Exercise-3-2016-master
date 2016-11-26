@@ -147,6 +147,8 @@ public class MainActivity extends AppCompatActivity {
                 Let's show the contact's details:
                  */
                 DisplayContactDetails(contactName);
+
+                writeContactToFile(contacts);
             }
 
             @Override
@@ -196,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 }
+
+                writeContactToFile(contacts);
 
             }
 
@@ -250,6 +254,7 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(startEditContactActivity, 1);
 
         editContact(contact);
+        writeContactToFile(contacts);
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent sendChangedContact) {
